@@ -42,8 +42,6 @@ for (let rowsX = 0; rowsX < rows; rowsX++) {
   textArrayTest[rowsX] = new Array(columns);
 }
 
-// let colors = ['#d44720', '#b51dad', '#bf963d', '#eb5ea0', '#aa7dff', '#ffb8fd', '#fff08c']
-
 // Text Objects
 let nowHiring = {
   text: 'NOW HIRING',
@@ -77,7 +75,6 @@ let sanitationWorkers = {
 let jobOpenings = {
   text: 'JOB OPENINGS',
   fillTextSize: 43 * scale
-  // fillTextSize: 37 * scale
 }
 let helpWanted = {
   text: 'HELP WANTED',
@@ -98,11 +95,8 @@ let colWidth = (cw - (24 * scale)) / 3 - (20 * scale);
 function setup() {
   let cnv = createCanvas((roundTo(windowWidth, (colWidth+20*scale)))+20*scale + .75*scale + colWidth+20*scale, roundTo((windowHeight-32*scale), (120*scale))+15*scale+(120+32)*scale);
   cnv.id('canvas');
-
   cnv.parent('canvasContainer');
-  
 
-  // background(255, 0, 0);
   frameRate(fr);
   textLeading(40 * scale);
   textAlign(CENTER, CENTER);
@@ -117,19 +111,12 @@ function setup() {
   colorMode(HSB);
 }
 
-// function mousePressed() {
-//   noLoop();
-// }
-
 function draw() {
-
   background(0);
-
   push();
   if (testColorCounter % 1 == 0) {
     for (let rowsX = 0; rowsX < rows; rowsX++) {
         for (let colsX = 0; colsX < columns; colsX++) {
-          // colorArrayTest[rowsX][colsX] = random(360);
           colorArrayTest[rowsX][colsX] = roundTo(random(360), 30);
         }
     }
@@ -200,7 +187,6 @@ function draw() {
         fill(colorArrayTest[i][j], 42, 100);
         fill(colorArrayTest[i][j], 45, 100);
         fill(colorArrayTest[i][j], 50, 100);
-
         stroke(colorArrayTest[i][j], 40, 100);
       }
 
@@ -210,10 +196,7 @@ function draw() {
     }
   }
   pop();
-
   shadowFrame.style.animation = 'blink 2s linear infinite';
-  // shadowFrame.style.animationDelay = '1100ms';
-
 }
 
 // dashed lines
@@ -228,11 +211,3 @@ function windowResized() {
 function roundTo(value, x) {
 	return round(value/x) * x;
 }
-
-// function changeSize(e) {
-//   frame.style.clipPath = `polygon(0% 0%, 0% 100%, ${frameWidth.value}% 100%, ${frameWidth.value}% ${frameHeight.value}%, ${100 - frameWidth.value}% ${frameHeight.value}%, ${100 - frameWidth.value}% ${100-frameHeight.value}%, ${frameWidth.value}% ${100-frameHeight.value}%, ${frameWidth.value}% 100%, 100% 100%, 100% 0%)`;
-// }
-
-// let d = new Date();
-// let year = d.getFullYear();
-// document.getElementById('date').innerHTML = year;

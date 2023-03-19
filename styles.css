@@ -23,17 +23,14 @@ body {
   background: black;
   overflow-x: hidden;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 .logo {
   height: 100%;
 }
-
 #canvasContainer {
   position: absolute;
   position: fixed;
@@ -48,8 +45,6 @@ body {
   top: 100vh;
   width: 100vw;
   background: white;
-  /* background: red; */
-
   display: flex;
   justify-content: center;
 }
@@ -60,7 +55,6 @@ canvas {
   transform: translate(-50%, -50%);
   z-index: 0;
 }
-
 #control {
   position: fixed;
   top: 0;
@@ -70,7 +64,6 @@ canvas {
   background: rgb(17, 17, 17);
   z-index: 11;
   color: white;
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,30 +121,20 @@ input {
   transform: rotate(180deg);
 }
 #frameWidth {
-  /* top: 0; */
   left: 10px;
 }
 #frameHeight {
-  /* top: 0; */
   left: 200px;
 }
-
 #shadowFrame {
   position: absolute;
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
-  /* width: 400.666px;
-  height: 60px; */
-  /* background: rgba(0, 0, 0, 0.657); */
-  /* background: rgba(255, 0, 0, 0.657); */
   z-index: 10;
-
   width: 100%;
   height: 100%;
   clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 28%, 75% 28%, 75% 72%, 25% 72%, 25% 100%, 100% 100%, 100% 0%);
-  /* animation: blink 2s linear infinite; */
-  /* animation-delay: 1200ms; */
 }
 #titleBackground {
   position: absolute;
@@ -159,14 +142,11 @@ input {
   left: 50vw;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.657);
-  /* background: rgba(255, 255, 0, 0.657); */
   z-index: 10;
-
   width: 100%;
   height: 100%;
   clip-path: polygon(25% 28%,75% 28%,75% 72%,25% 72%);
   color: white;
-
   display: grid;
   place-items: center;
 }
@@ -238,5 +218,4 @@ input {
   0%   {background: rgba(0, 0, 0, 0.657);}
   49%  {background: rgba(0, 0, 0, 0.657);}
   50%  {background: rgba(0, 0, 0, 0);}
-  /* 100% {background: rgba(0, 0, 0, 0);} */
 }
