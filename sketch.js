@@ -197,7 +197,7 @@ function draw() {
   }
   pop();
   shadowFrame.style.animation = 'blink 2s linear infinite';
-  shadowFrame.style.animationDelay = '1500ms';
+  // shadowFrame.style.animationDelay = '1500ms';
 }
 
 // dashed lines
