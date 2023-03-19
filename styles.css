@@ -1,0 +1,242 @@
+@font-face {
+  font-family: PPPangramSansRounded;
+  src: url("assets/PPPangramSansRounded-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: PostoniDisplayRegular;
+  src: url("assets/postoni-display-regular.woff") format("woff");
+}
+@font-face {
+  font-family: FranklinITC-Pro-Bold;
+  src: url("assets/FranklinITC-Pro-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: FranklinITC-Pro-Light;
+  src: url("assets/FranklinITC-Pro-Light.woff") format("woff");
+}
+@font-face {
+  font-family: FranklinITC-Pro-Thin;
+  src: url("assets/FranklinITC-Pro-Thin.woff") format("woff");
+}
+
+body {
+  background: black;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  height: 100%;
+}
+
+#canvasContainer {
+  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.test {
+  position: absolute;
+  top: 100vh;
+  width: 100vw;
+  background: white;
+  /* background: red; */
+
+  display: flex;
+  justify-content: center;
+}
+canvas {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+#control {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 60px;
+  background: rgb(17, 17, 17);
+  z-index: 11;
+  color: white;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-family: 'PostoniDisplayRegular', Times, serif;
+}
+h1, h3 {
+  width: 20%;
+}
+.body-text {
+  width: 40em;
+  color: rgb(42, 42, 42);
+  margin-bottom: 7rem;
+  margin-bottom: 15rem;
+}
+p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+#author {
+  font-size: 1rem;
+  text-transform: capitalize;
+  margin-top: 2rem;
+  font-family: 'FranklinITC-Pro-Light', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(42, 42, 42);
+}
+#articleDate {
+  font-size: 1rem;
+  font-family: 'FranklinITC-Pro-Light', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(102, 102, 102);
+}
+#title {
+  font-size: 1.5vw;
+}
+#widthLabel {
+  margin-right: 5px;
+}
+#heightLabel {
+  margin-left: 20px;
+  margin-right: 5px;
+}
+#date {
+  text-align: right;
+  font-size: 1vw;
+}
+label {
+  font-size: 1.2vw;
+}
+.inputs {
+  justify-self: center;
+}
+input {
+  z-index: 12;
+  transform: rotate(180deg);
+}
+#frameWidth {
+  /* top: 0; */
+  left: 10px;
+}
+#frameHeight {
+  /* top: 0; */
+  left: 200px;
+}
+
+#shadowFrame {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  /* width: 400.666px;
+  height: 60px; */
+  /* background: rgba(0, 0, 0, 0.657); */
+  /* background: rgba(255, 0, 0, 0.657); */
+  z-index: 10;
+
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 28%, 75% 28%, 75% 72%, 25% 72%, 25% 100%, 100% 100%, 100% 0%);
+  animation: blink 2s linear infinite;
+  animation-delay: 1200ms;
+}
+#titleBackground {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.657);
+  /* background: rgba(255, 255, 0, 0.657); */
+  z-index: 10;
+
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(25% 28%,75% 28%,75% 72%,25% 72%);
+  color: white;
+
+  display: grid;
+  place-items: center;
+}
+#text {
+  width: 50%;
+  text-align: center;
+}
+#opinion {
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-family: 'FranklinITC-Pro-Thin', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: .1rem;
+}
+#title {
+  width: 100%;
+  font-family: 'PostoniDisplayRegular', Times, serif;
+  text-transform: capitalize;
+  font-size: 3.5rem;
+  font-size: 4.2rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: .2rem;
+}
+#subtitle {
+  width: 100%;
+  text-transform: capitalize;
+  line-height: 1.5;
+  font-family: 'FranklinITC-Pro-Light', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: .1rem;
+}
+
+/* images and captions */
+.caption-title {
+  font-family: 'FranklinITC-Pro-Bold', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  display: inline-block;
+  margin-bottom: .625rem;
+}
+.caption-subtitle {
+  font-family: 'FranklinITC-Pro-Light', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1rem;
+  margin-bottom: .625rem;
+  display: inline-block;
+}
+.image-caption {
+  font-family: 'FranklinITC-Pro-Light', 'Arial Narrow', Arial, sans-serif;
+  font-size: .765rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.first-image {
+  margin-top: 2rem;
+}
+.body-image, .first-image {
+  width: 100%;
+}
+.first-image-caption {
+  font-family: 'FranklinITC-Pro-Light', 'Arial Narrow', Arial, sans-serif;
+  font-size: .875rem;
+  display: inline-block;
+  color: rgb(102, 102, 102);
+}
+
+@keyframes blink {
+  0%   {background: rgba(0, 0, 0, 0.657);}
+  49%  {background: rgba(0, 0, 0, 0.657);}
+  50%  {background: rgba(0, 0, 0, 0);}
+  /* 100% {background: rgba(0, 0, 0, 0);} */
+}
