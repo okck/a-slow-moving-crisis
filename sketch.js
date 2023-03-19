@@ -1,3 +1,5 @@
+let shadowFrame = document.getElementById('shadowFrame');
+
 let scale;
 scale = .85;
 // scale = 2;
@@ -120,6 +122,7 @@ function setup() {
 // }
 
 function draw() {
+
   background(0);
 
   push();
@@ -207,6 +210,10 @@ function draw() {
     }
   }
   pop();
+
+  shadowFrame.style.animation = 'blink 2s linear infinite';
+  shadowFrame.style.animationDelay = '1100ms';
+
 }
 
 // dashed lines
